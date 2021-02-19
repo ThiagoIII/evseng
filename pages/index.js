@@ -1,65 +1,93 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from 'react'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import Head from '../components/HeadComp'
+import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
+//import Link from '@material-ui/core/Link'
+//import Grid from '@material-ui/core/Grid'
+import ContactLinks from '../components/ContactLinks'
+//import Image from 'material-ui-image'
+import Logo from '../components/Logo'
+import Button from '@material-ui/core/Button'
+import Card from '../components/Card'
+import { themeLight, themeDark } from '../util/darkLight'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    const [light, setLight] = React.useState(true)
+    let cards = [
+        [
+            ['titulo', 'Serviços Elétrica'],
+            ['lista', 'te1e', 'te2e', 'te3e', 'te4e', 'te5e']
+        ],
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        [
+            ['titulo', 'Serviços Hidráulica'],
+            ['lista', 'te1h', 'te2h', 'te3h', 'te4h', 'te5h']
+        ],
+        [
+            ['titulo', 'Empresa'],
+            ['texto', 'te1em']
+        ],
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        [
+            ['titulo', 'Missâo'],
+            ['texto', 'te1mi'],
+            ['titulo', 'Visão'],
+            ['texto', 'te2mi'],
+            ['titulo', 'Valores'],
+            ['texto', 'te3mi']
+        ],
+        [
+            ['titulo', 'Parceiros'],
+            [
+                'imagens',
+                'img1',
+                'img2',
+                'img3',
+                'img4',
+                'img5',
+                'img6',
+                'img7',
+                'img8',
+                'img9'
+            ]
+        ]
+    ] //will be retrieved from graphql
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+    return (
+        <>
+            <MuiThemeProvider theme={light ? themeLight : themeDark}>
+                <CssBaseline />
+                <Head />
+                {/*  <Head>
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+                    />
+                    <meta
+                        name="viewport"
+                        content="minimum-scale=1, initial-scale=1, width=device-width"
+                    />
+                    <title>Create Next App</title>
+                    <link rel="icon" href="/favicon.ico" />
+                </Head> */}
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+                <Container component="header" style={{ paddingTop: '1rem' }}>
+                    <Typography align="center" style={{ fontWeight: '500' }}>
+                        Qualidade e confiança
+                    </Typography>
+                    <Logo />
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+                    <Button onClick={() => setLight(prev => !prev)}>
+                        Mudar para o modo {light ? 'escuro' : 'claro'}
+                    </Button>
+                    <ContactLinks light={light} />
+                </Container>
+                {cards.map(card => (
+                    <Card card={card} />
+                ))}
+            </MuiThemeProvider>
+        </>
+    )
 }
