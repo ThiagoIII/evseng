@@ -7,8 +7,9 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Section from '../components/Section'
 import { themeLight, themeDark } from '../util/darkLight'
+import { fetchGraphQL as fetchCMSData } from '../util/fetchGraphQL'
 
-export default function Home() {
+export default function Home({ allCards }) {
     const [light, setLight] = React.useState(true)
 
     return (
@@ -18,9 +19,17 @@ export default function Home() {
                 <CssBaseline />
                 <Header light={light} />
                 <Grid container component="section">
-                    <Section />
+                    <Section allCards={allCards} />
                 </Grid>
             </MuiThemeProvider>
         </>
     )
+}
+
+export async function getStaticProps() {
+    const allCards = await fetchCMSData()
+    console.log('inside getstaticprops', allCards)
+    return {
+        props: { allCards }
+    }
 }
