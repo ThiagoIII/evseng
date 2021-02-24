@@ -7,7 +7,9 @@ import { fetchGraphQL as fetchCMSData } from '../util/fetchGraphQL'
 
 const Section = ({ allCards }) => {
     const [data, setData] = React.useState([])
-    console.log(allCards?.data?.cardCollection?.items)
+
+    console.log(allCards)
+
     React.useEffect(() => {
         async function getInfo() {
             let info = await fetchCMSData()
@@ -77,8 +79,34 @@ const Section = ({ allCards }) => {
     )
 }
 
+const query = `query 
+{
+  cardCollection {
+    items {
+      title
+      text
+      svgImage {
+        url
+      }
+      order
+    }
+  }
+}`
+
 export async function getStaticProps() {
-    const allCards = (await fetchCMSData()) ?? []
+    const cards = await fetch(
+        `https://graphql.contentful.com/content/v1/spaces/${process.env.contentful_space_id}`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${process.env.contentful_access_token}`
+            },
+            body: JSON.stringify({ query })
+        }
+    )
+    const allCards = await cards.json()
+    console.log('inside getstaticprops', allCards)
     return {
         props: { allCards }
     }
