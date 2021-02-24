@@ -31,6 +31,27 @@ const ContactLinks = ({ light }) => (
                 light={light}
             />
         </Grid>
+        <Grid item>
+            <Links
+                href={process.env.face}
+                text={'Facebook Evs Engenharia'}
+                light={light}
+            />
+        </Grid>
+        <Grid item>
+            <Links
+                href={process.env.insta}
+                text={'Instagram Evs Engenharia'}
+                light={light}
+            />
+        </Grid>
+        <Grid item>
+            <Links
+                href={process.env.linkedin}
+                text={'LinkdIn Evs Engenharia'}
+                light={light}
+            />
+        </Grid>
     </Grid>
 )
 
