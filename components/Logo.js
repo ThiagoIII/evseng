@@ -14,7 +14,7 @@ const Logo = () => (
             position: 'relative',
             width: '220px',
             height: '140px',
-            margin: '0 auto 0 auto'
+            margin: '0 auto -1rem auto'
         }}
     />
 )
