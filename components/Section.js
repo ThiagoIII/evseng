@@ -7,7 +7,7 @@ import { fetchGraphQL as fetchCMSData } from '../util/fetchGraphQL'
 
 const Section = ({ allCards }) => {
     const [data, setData] = React.useState([])
-    console.log(allCards.data?.cardCollection?.items)
+    console.log(allCards?.data?.cardCollection?.items)
     React.useEffect(() => {
         async function getInfo() {
             let info = await fetchCMSData()
