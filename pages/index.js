@@ -24,10 +24,3 @@ export default function Home() {
         </>
     )
 }
-
-/* export async function getStaticProps() {
-  const allPosts = (await getAllCards()) ?? []
-  return {
-    props: { allPosts },
-  }
-} */

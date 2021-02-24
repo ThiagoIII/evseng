@@ -12,7 +12,7 @@ const HeadComp = () => (
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <title>EVS Engenharia - Qualidade e Confianças</title>
+        <title>EVS Engenharia - Qualidade e Confiança</title>
         <link rel="icon" href="/favicon.ico" />
     </Head>
 )

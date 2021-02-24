@@ -13,7 +13,7 @@ const query = `query
 }
 `
 
-export async function fetchGraphQL(preview = false) {
+export async function fetchGraphQL() {
     return fetch(
         `https://graphql.contentful.com/content/v1/spaces/${process.env.contentful_space_id}`,
         {

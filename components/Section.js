@@ -7,7 +7,7 @@ import { fetchGraphQL as fetchCMSData } from '../util/fetchGraphQL'
 
 const Section = ({ allCards }) => {
     const [data, setData] = React.useState([])
-    let som
+
     React.useEffect(() => {
         async function getInfo() {
             let info = await fetchCMSData()
@@ -15,7 +15,6 @@ const Section = ({ allCards }) => {
         }
         getInfo()
     }, [])
-    //let viewBox = UndrawIconSVG().props.viewBox
 
     if (data.lenght === 0) {
         return <h2>Fetching stuff</h2>
