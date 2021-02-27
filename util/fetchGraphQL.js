@@ -15,12 +15,12 @@ const query = `query
 
 export async function fetchGraphQLDev() {
     return fetch(
-        `https://graphql.contentful.com/content/v1/spaces/v8pcvac25a9n`,
+        `https://graphql.contentful.com/content/v1/spaces/${process.env.contentful_space_id}`,
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer lHPRSH-89A-HNrFKRsQGNj2KWIIRMD4hbeC5E1Hn858`
+                Authorization: `Bearer ${process.env.contentful_access_token}`
             },
             body: JSON.stringify({ query })
         }

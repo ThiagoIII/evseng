@@ -5,7 +5,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 const linkSources = [
     {
-        href: process.env.WA,
+        href: process.env.wa,
         text: '(44) 98834-5099',
         icon: <WhatsAppIcon />
     },
@@ -16,17 +16,17 @@ const linkSources = [
     },
     [
         {
-            href: process.env.FACE,
+            href: process.env.face,
             text: null,
             icon: <FacebookIcon />
         },
         {
-            href: process.env.INSTA,
+            href: process.env.insta,
             text: null,
             icon: <InstagramIcon />
         },
         {
-            href: process.env.LINKEDIN,
+            href: process.env.linkedin,
             text: null,
             icon: <LinkedInIcon />
         }

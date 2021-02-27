@@ -14,6 +14,7 @@ const Section = ({ allCards }) => {
     React.useEffect(() => {
         async function getInfo() {
             let info = await fetchCMSDataDev()
+            console.log('info', info)
             setData(info?.data?.cardCollection?.items)
         }
         getInfo()
