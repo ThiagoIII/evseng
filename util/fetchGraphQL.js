@@ -13,14 +13,27 @@ const query = `query
 }
 `
 
-export async function fetchGraphQL() {
+export async function fetchGraphQLDev() {
     return fetch(
-        `https://graphql.contentful.com/content/v1/spaces/${process.env.contentful_space_id}`,
+        `https://graphql.contentful.com/content/v1/spaces/v8pcvac25a9n`,
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${process.env.contentful_access_token}`
+                Authorization: `Bearer lHPRSH-89A-HNrFKRsQGNj2KWIIRMD4hbeC5E1Hn858`
+            },
+            body: JSON.stringify({ query })
+        }
+    ).then(response => response.json())
+}
+export async function fetchGraphQLProd() {
+    return fetch(
+        `https://graphql.contentful.com/content/v1/spaces/v8pcvac25a9n`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer lHPRSH-89A-HNrFKRsQGNj2KWIIRMD4hbeC5E1Hn858`
             },
             body: JSON.stringify({ query })
         }
