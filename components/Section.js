@@ -49,6 +49,7 @@ const Section = ({ allCards }) => {
                                       position: 'relative'
                                   }
                         }
+                        key={section.id}
                     >
                         <Grid item xs={12}>
                             {section.title.includes('Elétrica') ? (
