@@ -28,12 +28,12 @@ export async function fetchGraphQLDev() {
 }
 export async function fetchGraphQLProd() {
     return fetch(
-        `https://graphql.contentful.com/content/v1/spaces/${process.env.contentful_space_id_evseng}`,
+        `https://graphql.contentful.com/content/v1/spaces/${process.env.contentful_space_id}`,
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${process.env.contentful_access_token_evseng}`
+                Authorization: `Bearer ${process.env.contentful_access_token}`
             },
             body: JSON.stringify({ query })
         }
