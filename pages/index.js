@@ -103,9 +103,9 @@ export default function Home({ allCards }) {
     )
 }
 
-export async function getStaticProps() {
+/* export async function getStaticProps() {
     const allCards = await fetchCMSDataProd()
     return {
         props: { allCards }
     }
-}
+} */
