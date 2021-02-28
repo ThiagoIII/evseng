@@ -14,6 +14,21 @@ const HeadComp = () => (
             media="screen"
         ></link>
         <link rel="me" href="https://github.com/ThiagoIII" type="text/html" />
+        <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png" />
+        {/* Launch Icon (180x180px or larger) */}
+        <link rel="apple-touch-startup-image" href="/path/to/launch.png" />{' '}
+        {/* launch screen image */}
+        <meta name="apple-mobile-web-app-title" content="App Title" />{' '}
+        {/* Launch Icon Title */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />{' '}
+        {/* Enable standalone (full-screen) mode */}
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black"
+        />{' '}
+        {/* Status bar appearance (has no effect unless standalone mode is enabled) */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta property="fb:app_id" content="123456789" />
         <meta property="og:url" content="https://example.com/page.html" />
         <meta property="og:type" content="website" />
@@ -21,7 +36,10 @@ const HeadComp = () => (
             property="og:title"
             content="EVS Engenharia - Qualidade e confiança"
         />
-        <meta property="og:image" content="/facebook.svg" />
+        <meta
+            property="og:image"
+            content="https://evseng.vercel.app/facebook.svg"
+        />
         <meta
             property="og:image:alt"
             content="Logo da EVS Engenharia, dois telhados azuis se sobrepondo parcialmente"
@@ -38,7 +56,7 @@ const HeadComp = () => (
         />
         <meta
             name="description"
-            content="Site da empresa de engenharia EVS Engenharia com sede em Umuarama - Paraná"
+            content="Site da empresa de engenharia EVS Engenharia - Qualidade e confiança com sede em Umuarama - Paraná"
         />
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
@@ -46,7 +64,7 @@ const HeadComp = () => (
         <meta name="geo.region" content="BR-PR"></meta>
         <meta name="geo.placename" content="Umuarama"></meta>
         <title>EVS Engenharia - Qualidade e Confiança</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logoEVS.png" />
     </Head>
 )
 
