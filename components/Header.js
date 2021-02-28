@@ -9,7 +9,7 @@ import ContactLinks from '../components/ContactLinks'
 
 const Header = ({ light }) => {
     return (
-        <Box pt={2}>
+        <Box pt={2} pb={4}>
             <Container component="header">
                 <Grid container>
                     <Grid
