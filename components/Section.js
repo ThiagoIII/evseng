@@ -34,7 +34,7 @@ const Section = ({ allCards }) => {
                         clone
                         pt={5}
                         order={section.order}
-                        key={section.order}
+                        key={section.id}
                         px={3}
                         style={
                             matche
