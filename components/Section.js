@@ -106,6 +106,11 @@ const Section = ({ allCards }) => {
                                 container
                                 spacing={1}
                                 justify="center"
+                                direction={
+                                    section.order % 2 === 0
+                                        ? 'row'
+                                        : 'row-reverse'
+                                }
                                 xs={12}
                             >
                                 <Grid
@@ -130,6 +135,7 @@ const Section = ({ allCards }) => {
                                         </Typography>
                                     </pre>
                                 </Grid>
+
                                 <Hidden smDown>
                                     <Grid
                                         item

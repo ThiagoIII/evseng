@@ -15,6 +15,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 import { makeStyles } from '@material-ui/core/styles'
 import Fab from '@material-ui/core/Fab'
 import Box from '@material-ui/core/Box'
+import Link from '@material-ui/core/Link'
 
 const useStyles = makeStyles({
     root: {
@@ -70,7 +71,12 @@ export default function Home({ allCards }) {
                             <label htmlFor="name">
                                 Insira seu nome aqui, por favor.
                             </label>
-                            <input type="text" name="name" placeholder="Nome" />
+                            <input
+                                autoFocus
+                                type="text"
+                                name="name"
+                                placeholder="Nome"
+                            />
                             <label htmlFor="email">
                                 Insira seu email aqui, por favor.
                             </label>
@@ -110,6 +116,15 @@ export default function Home({ allCards }) {
                         </form>
                     </Grid>
                 </Grid>
+                <footer>
+                    Developed by{' '}
+                    <Link
+                        href="https://github.com/ThiagoIII?tab=repositories"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    ></Link>
+                    Thiago Terceiro
+                </footer>
             </MuiThemeProvider>
             <script src="https://kwes.io/v2/kwes-script.js" defer></script>
         </>
