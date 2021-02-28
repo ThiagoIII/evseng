@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container'
 
 const Section = ({ allCards }) => {
     const [data, setData] = React.useState([])
-
+    console.log('allcards', allCards)
     React.useEffect(() => {
         async function getInfo() {
             let info = await fetchCMSDataDev()
