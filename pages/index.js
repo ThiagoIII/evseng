@@ -122,8 +122,9 @@ export default function Home({ allCards }) {
                         href="https://github.com/ThiagoIII?tab=repositories"
                         target="_blank"
                         rel="noreferrer noopener"
-                    ></Link>
-                    Thiago Terceiro
+                    >
+                        Thiago Terceiro
+                    </Link>
                 </footer>
             </MuiThemeProvider>
             <script src="https://kwes.io/v2/kwes-script.js" defer></script>
