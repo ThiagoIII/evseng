@@ -4,24 +4,36 @@ import Head from 'next/head'
 const HeadComp = () => (
     <Head>
         {' '}
+        <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <meta charSet="utf-8" />
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
-        <link
-            rel="stylesheet"
-            href="https://s.pageclip.co/v1/pageclip.css"
-            media="screen"
-        ></link>
         <link rel="me" href="https://github.com/ThiagoIII" type="text/html" />
-        <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png" />
-        {/* Launch Icon (180x180px or larger) */}
-        <link rel="apple-touch-startup-image" href="/path/to/launch.png" />{' '}
-        {/* launch screen image */}
-        <meta name="apple-mobile-web-app-title" content="App Title" />{' '}
-        {/* Launch Icon Title */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />{' '}
-        {/* Enable standalone (full-screen) mode */}
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#141414" />
         <meta
             name="apple-mobile-web-app-status-bar-style"
             content="black"
@@ -29,8 +41,7 @@ const HeadComp = () => (
         {/* Status bar appearance (has no effect unless standalone mode is enabled) */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta property="fb:app_id" content="123456789" />
-        <meta property="og:url" content="https://example.com/page.html" />
+        <meta property="og:url" content="https://evseng.vercel.app" />
         <meta property="og:type" content="website" />
         <meta
             property="og:title"
@@ -38,7 +49,7 @@ const HeadComp = () => (
         />
         <meta
             property="og:image"
-            content="https://evseng.vercel.app/facebook.svg"
+            content="https://evseng.vercel.app/logoEVS.png"
         />
         <meta
             property="og:image:alt"
@@ -50,10 +61,6 @@ const HeadComp = () => (
         />
         <meta property="og:locale" content="pt_BR" />
         <meta property="article:author" content="Thiago Terceiro" />
-        <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
         <meta
             name="description"
             content="Site da empresa de engenharia EVS Engenharia - Qualidade e confiança com sede em Umuarama - Paraná"
