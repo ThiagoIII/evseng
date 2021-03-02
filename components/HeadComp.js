@@ -10,7 +10,7 @@ const HeadComp = () => (
         <meta charSet="utf-8" />
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self' https://evseng.vercel.app/ https://kwes.io/; style-src https://evseng.vercel.app/ https://fonts.googleapis.com/ https://kwes.io/; img-src *; font-src https://fonts.googleapis.com/"
+            content="default-src 'self'"
         ></meta>
         <script src="https://kwes.io/v2/kwes-script.js" async />
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
