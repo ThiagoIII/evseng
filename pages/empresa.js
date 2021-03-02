@@ -1,15 +1,12 @@
 import React from 'react'
-import Layout from '../layout/Layout'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
 import { fetchCMSDataLinkPage } from '../util/fetchGraphQL'
 import SectionItem from '../components/SectionItem'
 
-const Empresa = (
-    { content: { data: { card = false } } = { data: 'nodata' } } = {
-        content: 'nocontent'
+const Empresa = ({
+    content: {
+        data: { card = false }
     }
-) => {
+}) => {
     if (!card)
         return (
             <>
@@ -39,7 +36,7 @@ const Empresa = (
             </>
         )
 
-    return <SectionItem card={card} />
+    return <SectionItem card={card} bread={'A Empresa'} linkBread={'empresa'} />
 }
 
 export async function getStaticProps() {

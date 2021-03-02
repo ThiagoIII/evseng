@@ -2,10 +2,20 @@ import React from 'react'
 import Layout from '../layout/Layout'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Link from '@material-ui/core/Link'
+import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 
-const SectionItem = ({ card }) => {
+const SectionItem = ({ card, ...rest }) => {
     return (
         <Layout>
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link color="inherit" href="/">
+                    Home
+                </Link>
+                <Link color="inherit" href={`${rest.linkBread}`}>
+                    {rest.bread}
+                </Link>
+            </Breadcrumbs>
             <Grid
                 xs={10}
                 container

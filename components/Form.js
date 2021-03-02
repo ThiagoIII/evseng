@@ -49,12 +49,7 @@ const Form = () => {
                         <label htmlFor="name">
                             Insira seu nome aqui, por favor.
                         </label>
-                        <input
-                            autoFocus
-                            type="text"
-                            name="name"
-                            placeholder="Nome"
-                        />
+                        <input type="text" name="name" placeholder="Nome" />
                         <label htmlFor="email">
                             Insira seu email aqui, por favor.
                         </label>

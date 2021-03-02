@@ -3,12 +3,17 @@ import Head from 'next/head'
 
 const HeadComp = () => (
     <Head>
-        {' '}
         <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
         />
         <meta charSet="utf-8" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; img-src *; script-src kwes.io/v2/kwes-script.js;"
+        ></meta>
+        <script src="https://kwes.io/v2/kwes-script.js" async />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -34,11 +39,7 @@ const HeadComp = () => (
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#141414" />
-        <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black"
-        />{' '}
-        {/* Status bar appearance (has no effect unless standalone mode is enabled) */}
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta property="og:url" content="https://evseng.vercel.app" />
