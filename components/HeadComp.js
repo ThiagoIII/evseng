@@ -10,10 +10,10 @@ const HeadComp = () => (
         <meta charSet="utf-8" />
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self'; script-src 'self' https://kwes.io/ https://apis.google.com; font-src 'self' https://fonts.googleapis.com/; style-src-elem 'self' https://kwes.io/ https://fonts.googleapis.com/"
+            content="default-src 'self'; script-src 'self' https://kwes.io/ https://apis.google.com  https://fonts.googleapis.com/ https://fonts.gstatic.com/; font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/; style-src 'self' https://kwes.io/ https://fonts.googleapis.com/ https://fonts.gstatic.com/;style-src-elem 'self' https://kwes.io/ https://fonts.googleapis.com/ https://fonts.gstatic.com/"
         ></meta>
         <script src="https://kwes.io/v2/kwes-script.js" async />
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
