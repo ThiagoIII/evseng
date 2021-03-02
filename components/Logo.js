@@ -8,7 +8,8 @@ const Logo = () => (
         style={{
             height: 'auto',
             textAlign: 'center',
-            paddingTop: '0'
+            paddingTop: '0',
+            backgroundColor: 'none'
         }}
         imageStyle={{
             position: 'relative',
