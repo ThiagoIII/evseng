@@ -4,9 +4,18 @@ import Hidden from '@material-ui/core/Hidden'
 import MenuIcon from '@material-ui/icons/Menu'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles({
+    boxStyle: {
+        position: 'absolute',
+        top: '2.5rem',
+        right: '1.5rem'
+    }
+})
 const HamburgerNavbar = () => {
     const [anchorEl, setAnchorEl] = React.useState()
+    const classes = useStyles()
     const handleClick = event => {
         setAnchorEl(event.currentTarget)
     }
@@ -16,13 +25,7 @@ const HamburgerNavbar = () => {
 
     return (
         <Hidden mdUp>
-            <Box
-                style={{
-                    position: 'absolute',
-                    top: '2.5rem',
-                    right: '1.5rem'
-                }}
-            >
+            <Box className={classes.boxStyle}>
                 <MenuIcon
                     aria-controls="simple-menu"
                     aria-haspopup="true"

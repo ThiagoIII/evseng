@@ -3,8 +3,15 @@ import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 import Typography from '@material-ui/core/Typography'
 import ContactLinks from '../components/ContactLinks'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles({
+    padZero: {
+        padding: '0'
+    }
+})
 const HeaderContactSlogan = ({ light }) => {
+    const classes = useStyles()
     return (
         <>
             <Grid
@@ -25,7 +32,7 @@ const HeaderContactSlogan = ({ light }) => {
                         </Typography>
                     </Hidden>
                 </Grid>
-                <Grid item style={{ padding: '0' }}>
+                <Grid item className={classes.padZero}>
                     <Hidden mdUp>
                         <Typography
                             align="center"

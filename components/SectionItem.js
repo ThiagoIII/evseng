@@ -4,8 +4,19 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles({
+    gridBase: {
+        display: 'flex',
+        gap: '1rem'
+    },
+    whiteSpacePreWrap: {
+        whiteSpace: 'pre-wrap'
+    }
+})
 const SectionItem = ({ card, ...rest }) => {
+    const classes = useStyles()
     return (
         <Layout>
             <Breadcrumbs aria-label="breadcrumb">
@@ -22,7 +33,7 @@ const SectionItem = ({ card, ...rest }) => {
                 alignItems="center"
                 justify="center"
                 direction="column"
-                style={{ margin: '1rem auto' }}
+                className={classes.gridBase}
             >
                 <Grid item>
                     <Typography
@@ -36,11 +47,7 @@ const SectionItem = ({ card, ...rest }) => {
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <pre
-                        style={{
-                            whiteSpace: 'pre-wrap'
-                        }}
-                    >
+                    <pre className={classes.whiteSpacePreWrap}>
                         {' '}
                         <Typography align="left" variant="body2">
                             {card.text}

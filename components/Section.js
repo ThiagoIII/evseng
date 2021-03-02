@@ -8,9 +8,39 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Container from '@material-ui/core/Container'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { themeLight, themeDark } from '../util/darkLight'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+    imgStyleBase: {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        backgroundPosition: 'center',
+        backgroundOrigin: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        opacity: '0.1'
+    },
+    imgStyleEl: {
+        backgroundImage: 'url("/wires.jpg")'
+    },
+    imgStyleHi: {
+        backgroundImage: 'url("/pipes.jpg")'
+    },
+    whiteSpacePreWrap: {
+        whiteSpace: 'pre-wrap'
+    },
+    imgLocal: {
+        width: '80%',
+        height: 'auto'
+    }
+})
 
 const Section = ({ allCards, light }) => {
     const [data, setData] = React.useState([])
+    const classes = useStyles()
     React.useEffect(() => {
         async function getInfo() {
             let info = await fetchCMSDataDev()
@@ -58,39 +88,13 @@ const Section = ({ allCards, light }) => {
                                 {section.title.includes('Elétrica') ? (
                                     <Hidden mdUp>
                                         <Container
-                                            style={{
-                                                backgroundImage:
-                                                    'url("/wires.jpg")',
-                                                position: 'absolute',
-                                                top: '0',
-                                                left: '0',
-                                                width: '100%',
-                                                height: '100%',
-                                                backgroundPosition: 'center',
-                                                backgroundOrigin: 'center',
-                                                backgroundSize: 'cover',
-                                                backgroundRepeat: 'no-repeat',
-                                                opacity: '0.1'
-                                            }}
+                                            className={`${classes.imgStyle} ${classes.imgStyleEl}`}
                                         />
                                     </Hidden>
                                 ) : section.title.includes('Hidráulica') ? (
                                     <Hidden mdUp>
                                         <Container
-                                            style={{
-                                                backgroundImage:
-                                                    'url("/pipes.jpg")',
-                                                position: 'absolute',
-                                                top: '0',
-                                                left: '0',
-                                                width: '100%',
-                                                height: '100%',
-                                                backgroundPosition: 'center',
-                                                backgroundOrigin: 'center',
-                                                backgroundSize: 'cover',
-                                                backgroundRepeat: 'no-repeat',
-                                                opacity: '0.1'
-                                            }}
+                                            className={`${classes.imgStyle} ${classes.imgStyleHi}`}
                                         />
                                     </Hidden>
                                 ) : null}
@@ -125,9 +129,9 @@ const Section = ({ allCards, light }) => {
                                         justify="center"
                                     >
                                         <pre
-                                            style={{
-                                                whiteSpace: 'pre-wrap'
-                                            }}
+                                            className={
+                                                classes.whiteSpacePreWrap
+                                            }
                                         >
                                             {' '}
                                             <Typography
@@ -149,10 +153,7 @@ const Section = ({ allCards, light }) => {
                                         >
                                             <img
                                                 src={section.svgImage.url}
-                                                style={{
-                                                    width: '80%',
-                                                    height: 'auto'
-                                                }}
+                                                className={classes.imgLocal}
                                             />
                                         </Grid>
                                     </Hidden>
