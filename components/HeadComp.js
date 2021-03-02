@@ -10,7 +10,7 @@ const HeadComp = () => (
         <meta charSet="utf-8" />
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self'; script-src 'self' https://kwes.io/ https://apis.google.com; font-src 'self' https://themes.googleusercontent.com"
+            content="default-src 'self'; script-src 'self' https://kwes.io/ https://apis.google.com; font-src 'self' https://fonts.googleapis.com/"
         ></meta>
         <script src="https://kwes.io/v2/kwes-script.js" async />
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />

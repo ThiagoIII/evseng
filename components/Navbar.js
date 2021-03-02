@@ -4,12 +4,20 @@ import Hidden from '@material-ui/core/Hidden'
 import Typography from '@material-ui/core/Typography'
 import { Link as LinkMUI } from '@material-ui/core'
 import Link from 'next/link'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles({
+    root: {
+        display: 'flex',
+        gap: '1rem'
+    }
+})
 const Navbar = () => {
+    const classes = useStyles()
     return (
         <Hidden smDown>
             <Grid container justify="center">
-                <Typography style={{ display: 'flex', gap: '1rem' }}>
+                <Typography className={classes.root}>
                     <Link href="/">
                         <LinkMUI color="inherit"> Home |</LinkMUI>
                     </Link>

@@ -5,6 +5,15 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles({
     root: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyItems: 'center',
+        width: '100%',
+        margin: '2rem auto',
+        border: 'solid #BFBFBF 1px',
+        borderRadius: '4px',
+        padding: '0.5rem',
         '& label': {
             width: '60%',
             fontSize: '1.1rem'
@@ -21,6 +30,9 @@ const useStyles = makeStyles({
                 fontSize: '0.95rem',
                 letterSpacing: '18%'
             }
+        },
+        '& button': {
+            backgroundColor: '#2D5C80'
         }
     }
 })
@@ -34,17 +46,6 @@ const Form = () => {
                     <form
                         action="https://kwes.io/api/foreign/forms/be4vVabxv6v4WwS6X8Vw"
                         className={`kwes-form ${classes.root}`}
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyItems: 'center',
-                            width: '100%',
-                            margin: '2rem auto',
-                            border: 'solid #BFBFBF 1px',
-                            borderRadius: '4px',
-                            padding: '0.5rem'
-                        }}
                     >
                         <label htmlFor="name">
                             Insira seu nome aqui, por favor.
@@ -68,7 +69,6 @@ const Form = () => {
                         />
                         <Fab
                             variant="extended"
-                            style={{ backgroundColor: '#2D5C80' }}
                             color="secondary"
                             aria-label="submit"
                             size="small"
