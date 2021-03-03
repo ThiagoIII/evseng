@@ -6,7 +6,7 @@ import Layout from '../layout/Layout'
 import Link from '@material-ui/core/Link'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 
-export default function Home({ content }) {
+export default function Home({ content, light }) {
     return (
         <>
             <Breadcrumbs aria-label="breadcrumb">
@@ -15,7 +15,7 @@ export default function Home({ content }) {
                 </Link>
             </Breadcrumbs>
             <Grid container component="section">
-                <Section allCards={content} />
+                <Section allCards={content} light={light} />
             </Grid>
         </>
     )

@@ -13,7 +13,7 @@ import MessageError from '../components/MessageError'
 import promiseTestImage from '../util/promiseTestImage'
 
 const useStyles = makeStyles({
-    imgStyleBase: {
+    root: {
         position: 'absolute',
         top: '0',
         left: '0',
@@ -106,14 +106,14 @@ const Section = ({
                                 <Hidden mdUp>
                                     <Container
                                         id="wires"
-                                        className={`${classes.imgStyleBase} `}
+                                        className={`${classes.root} `}
                                     />
                                 </Hidden>
                             ) : section.title.includes('Hidráulica') ? (
                                 <Hidden mdUp>
                                     <Container
                                         id="pipes"
-                                        className={`${classes.imgStyleBase} `}
+                                        className={`${classes.root} `}
                                     />
                                 </Hidden>
                             ) : null}
