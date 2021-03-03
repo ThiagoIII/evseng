@@ -47,20 +47,28 @@ const Section = ({
         let elWires = document.getElementById('wires')
         let elPipes = document.getElementById('pipes')
 
-        promiseTestImage('/wires_webpSmall30.webp', '/wires_jpgSmall20.jpg')
+        promiseTestImage(
+            '/wires_webpSmall30.webp',
+            '/wires_jpgSmall20.jpg',
+            elWires
+        )
             .then(url => {
-                elWires.style.backgroundImage = `url(${url})`
+                elWires?.style.backgroundImage = `url(${url})`
             })
             .catch(fallbackUrl => {
-                elWires.style.backgroundImage = `url(${fallbackUrl})`
+                elWires?.style.backgroundImage = `url(${fallbackUrl})`
             })
 
-        promiseTestImage('/pipes_webpSmall50.webp', '/pipes_jpgSmall50')
+        promiseTestImage(
+            '/pipes_webpSmall50.webp',
+            '/pipes_jpgSmall50',
+            elPipes
+        )
             .then(url => {
-                elPipes.style.backgroundImage = `url(${url})`
+                elPipes?.style.backgroundImage = `url(${url})`
             })
             .catch(fallbackUrl => {
-                elPipes.style.backgroundImage = `url(${fallbackUrl})`
+                elPipes?.style.backgroundImage = `url(${fallbackUrl})`
             })
     }, [])
 
