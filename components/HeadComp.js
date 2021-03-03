@@ -8,10 +8,10 @@ const HeadComp = () => (
             content="minimum-scale=1, initial-scale=1, width=device-width"
         />
         <meta charSet="utf-8" />
-        <meta
+        {/*     <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self' https://kwes.io/; script-src 'self' https://kwes.io/ https://apis.google.com  https://fonts.googleapis.com/ https://fonts.gstatic.com/; font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/; style-src 'self' https://kwes.io/ https://fonts.googleapis.com/ https://fonts.gstatic.com/;style-src-elem 'self' https://kwes.io/ https://fonts.googleapis.com/ https://fonts.gstatic.com/"
-        ></meta>
+            content="default-src 'self' />*/}{' '}
+        {/* need to implement a nonce with a server, as this is JAMStack I still need to do research about this. */}
         <script src="https://kwes.io/v2/kwes-script.js" async />
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
         <link
