@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from '../layout/Layout'
 import '../styles/globals.css'
+import React from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
+import Layout from '../layout/Layout'
 import { themeLight, themeDark } from '../util/darkLight'
 function MyApp({ Component, pageProps }) {
     const [light, setLight] = React.useState(true)
