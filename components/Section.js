@@ -52,30 +52,22 @@ const Section = ({
             '/wires_jpgSmall20.jpg',
             elWires
         )
-            .then((url, el) => {
-                console.log('insinde then', el)
-                let elWires = document.getElementById('wires')
-                elWires?.style.backgroundImage = `url(${url})`
-                el?.style.backgroundImage = `url(${url})`
-            })
-            .catch(({ fallbackUrl, el }) => {
-                console.log('insinde catch', el)
-                let elWires = document.getElementById('wires')
-                elWires?.style.backgroundImage = `url(${fallbackUrl})`
-                el?.style.backgroundImage = `url(${fallbackUrl})`
-            })
+            .then(data => (data.el.style.backgroundImage = `url(${data.url})`))
+            .catch(
+                data =>
+                    (data.el.style.backgroundImage = `url(${data.fallbackUrl}`)
+            )
 
         promiseTestImage(
             '/pipes_webpSmall50.webp',
             '/pipes_jpgSmall50',
             elPipes
         )
-            .then((url, el) => {
-                el?.style.backgroundImage = `url(${url})`
-            })
-            .catch((fallbackUrl, el) => {
-                el?.style.backgroundImage = `url(${fallbackUrl})`
-            })
+            .then(data => (data.el.style.backgroundImage = `url(${data.url})`))
+            .catch(
+                data =>
+                    (data.el.style.backgroundImage = `url(${data.fallbackUrl})`)
+            )
     }, [])
 
     if (!items) return <MessageError />

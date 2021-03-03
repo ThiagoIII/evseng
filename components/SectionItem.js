@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../layout/Layout'
+import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
@@ -7,10 +7,6 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
-    gridBase: {
-        display: 'flex',
-        gap: '1rem'
-    },
     whiteSpacePreWrap: {
         whiteSpace: 'pre-wrap'
     }
@@ -18,8 +14,8 @@ const useStyles = makeStyles({
 const SectionItem = ({ card, ...rest }) => {
     const classes = useStyles()
     return (
-        <>
-            <Breadcrumbs aria-label="breadcrumb">
+        <Box p={6}>
+            <Breadcrumbs ml={6} aria-label="breadcrumb">
                 <Link color="inherit" href="/">
                     Home
                 </Link>
@@ -29,12 +25,12 @@ const SectionItem = ({ card, ...rest }) => {
             </Breadcrumbs>
             <Grid
                 item
-                xs={10}
+                xs={12}
                 container
+                spacing={4}
                 alignItems="center"
                 justify="center"
                 direction="column"
-                className={classes.gridBase}
             >
                 <Grid item>
                     <Typography
@@ -56,7 +52,7 @@ const SectionItem = ({ card, ...rest }) => {
                     </pre>
                 </Grid>
             </Grid>
-        </>
+        </Box>
     )
 }
 
