@@ -52,11 +52,11 @@ const Section = ({
             '/wires_jpgSmall20.jpg',
             elWires
         )
-            .then(url => {
-                elWires?.style.backgroundImage = `url(${url})`
+            .then((url, el) => {
+                el?.style.backgroundImage = `url(${url})`
             })
-            .catch(fallbackUrl => {
-                elWires?.style.backgroundImage = `url(${fallbackUrl})`
+            .catch((fallbackUrl, el) => {
+                el?.style.backgroundImage = `url(${fallbackUrl})`
             })
 
         promiseTestImage(
@@ -64,11 +64,11 @@ const Section = ({
             '/pipes_jpgSmall50',
             elPipes
         )
-            .then(url => {
-                elPipes?.style.backgroundImage = `url(${url})`
+            .then((url, el) => {
+                el?.style.backgroundImage = `url(${url})`
             })
-            .catch(fallbackUrl => {
-                elPipes?.style.backgroundImage = `url(${fallbackUrl})`
+            .catch((fallbackUrl, el) => {
+                el?.style.backgroundImage = `url(${fallbackUrl})`
             })
     }, [])
 
