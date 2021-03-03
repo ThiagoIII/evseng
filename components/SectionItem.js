@@ -3,24 +3,18 @@ import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
+import { Link as LinkMUI } from '@material-ui/core'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
-import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
-    whiteSpacePreWrap: {
-        whiteSpace: 'pre-wrap'
-    }
-})
 const SectionItem = ({ card, ...rest }) => {
-    const classes = useStyles()
     return (
         <Box p={6}>
             <Breadcrumbs ml={6} aria-label="breadcrumb">
-                <Link color="inherit" href="/">
-                    Home
+                <Link href="/">
+                    <LinkMUI color="inherit">Home</LinkMUI>
                 </Link>
-                <Link color="inherit" href={`${rest.linkBread}`}>
-                    {rest.bread}
+                <Link href={`${rest.linkBread}`}>
+                    <LinkMUI color="inherit">{rest.bread}</LinkMUI>
                 </Link>
             </Breadcrumbs>
             <Grid
@@ -44,7 +38,7 @@ const SectionItem = ({ card, ...rest }) => {
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <pre className={classes.whiteSpacePreWrap}>
+                    <pre style={{ whiteSpace: 'pre-wrap' }}>
                         {' '}
                         <Typography align="left" variant="body2">
                             {card.text}

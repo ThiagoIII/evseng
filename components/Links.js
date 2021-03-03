@@ -4,16 +4,8 @@ import { Link as LinkMUI } from '@material-ui/core'
 import Link from 'next/link'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
-    h100: {
-        height: '100%'
-    }
-})
 const Links = ({ href, light, ...rest }) => {
-    const classes = useStyles()
-
     return (
         <LinkMUI
             href={href}
@@ -28,8 +20,8 @@ const Links = ({ href, light, ...rest }) => {
                         <Box>{rest.icon}</Box>
                     )}
                 </Grid>
-                <Grid item className={classes.h100}>
-                    <Typography className={classes.h100}>
+                <Grid item style={{ height: '100%' }}>
+                    <Typography style={{ height: '100%' }}>
                         {rest.text}
                     </Typography>
                 </Grid>

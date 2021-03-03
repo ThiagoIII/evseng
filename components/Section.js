@@ -11,6 +11,7 @@ import { themeLight, themeDark } from '../util/darkLight'
 import { makeStyles } from '@material-ui/core/styles'
 import MessageError from '../components/MessageError'
 import promiseTestImage from '../util/promiseTestImage'
+
 const useStyles = makeStyles({
     imgStyleBase: {
         position: 'absolute',
@@ -23,9 +24,6 @@ const useStyles = makeStyles({
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         opacity: '0.1'
-    },
-    whiteSpacePreWrap: {
-        whiteSpace: 'pre-wrap'
     },
     imgLocal: {
         width: '80%',
@@ -149,7 +147,7 @@ const Section = ({
                                     alignItems="center"
                                     justify="center"
                                 >
-                                    <pre className={classes.whiteSpacePreWrap}>
+                                    <pre style={{ whiteSpace: 'pre-wrap' }}>
                                         {' '}
                                         <Typography
                                             align="left"
