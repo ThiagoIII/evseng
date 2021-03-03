@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     const [light, setLight] = React.useState(true)
     return (
         <MuiThemeProvider theme={light ? themeLight : themeDark}>
-            <Layout setLight={setLight}>
+            <Layout setLight={setLight} light={light}>
                 <Component {...pageProps} light={light} />
             </Layout>
         </MuiThemeProvider>

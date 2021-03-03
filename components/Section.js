@@ -106,14 +106,36 @@ const Section = ({
                                 <Hidden mdUp>
                                     <Container
                                         id="wires"
-                                        className={`${classes.root} `}
+                                        style={{
+                                            position: 'absolute',
+                                            top: '0',
+                                            left: '0',
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundPosition: 'center',
+                                            backgroundOrigin: 'center',
+                                            backgroundSize: 'cover',
+                                            backgroundRepeat: 'no-repeat',
+                                            opacity: '0.1'
+                                        }}
                                     />
                                 </Hidden>
                             ) : section.title.includes('Hidráulica') ? (
                                 <Hidden mdUp>
                                     <Container
                                         id="pipes"
-                                        className={`${classes.root} `}
+                                        style={{
+                                            position: 'absolute',
+                                            top: '0',
+                                            left: '0',
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundPosition: 'center',
+                                            backgroundOrigin: 'center',
+                                            backgroundSize: 'cover',
+                                            backgroundRepeat: 'no-repeat',
+                                            opacity: '0.1'
+                                        }}
                                     />
                                 </Hidden>
                             ) : null}
