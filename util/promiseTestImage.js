@@ -4,10 +4,11 @@ export default function testImage(url, fallbackUrl, el) {
         imgElement.src = url
 
         imgElement.addEventListener('load', () => {
+            console.log(el)
             resolve(url, el)
         })
         imgElement.addEventListener('error', () => {
-            reject(fallbackUrl, el)
+            reject({ fallbackUrl, el })
         })
     })
 }

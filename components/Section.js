@@ -53,9 +53,15 @@ const Section = ({
             elWires
         )
             .then((url, el) => {
+                console.log('insinde then', el)
+                let elWires = document.getElementById('wires')
+                elWires?.style.backgroundImage = `url(${url})`
                 el?.style.backgroundImage = `url(${url})`
             })
-            .catch((fallbackUrl, el) => {
+            .catch(({ fallbackUrl, el }) => {
+                console.log('insinde catch', el)
+                let elWires = document.getElementById('wires')
+                elWires?.style.backgroundImage = `url(${fallbackUrl})`
                 el?.style.backgroundImage = `url(${fallbackUrl})`
             })
 
