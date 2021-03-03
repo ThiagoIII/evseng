@@ -5,30 +5,29 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 const linkSources = [
     {
-        href: process.env.wa,
+        href: process.env.NEXT_PUBLIC_wa,
         text: '(44) 98834-5099',
-        icon: <WhatsAppIcon />
-    },
-    {
-        href: null,
-        text: 'evsengenharia@outlook.com',
-        icon: null
+        icon: <WhatsAppIcon />,
+        id: 0
     },
     [
         {
-            href: process.env.face,
+            href: process.env.NEXT_PUBLIC_face,
             text: null,
-            icon: <FacebookIcon />
+            icon: <FacebookIcon />,
+            id: 1
         },
         {
-            href: process.env.insta,
+            href: process.env.NEXT_PUBLIC_insta,
             text: null,
-            icon: <InstagramIcon />
+            icon: <InstagramIcon />,
+            id: 2
         },
         {
-            href: process.env.linkedin,
+            href: process.env.NEXT_PUBLIC_linkedin,
             text: null,
-            icon: <LinkedInIcon />
+            icon: <LinkedInIcon />,
+            id: 3
         }
     ]
 ]

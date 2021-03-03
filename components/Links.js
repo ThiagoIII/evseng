@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import Link from '@material-ui/core/Link'
+import { Link as LinkMUI } from '@material-ui/core'
+import Link from 'next/link'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
@@ -12,11 +13,11 @@ const useStyles = makeStyles({
 })
 const Links = ({ href, light, ...rest }) => {
     const classes = useStyles()
+
     return (
-        <Link
-            target="_blank"
-            rel="noopener noreferrer"
+        <LinkMUI
             href={href}
+            target="_blank"
             style={{ color: light ? '#2D5C80' : '#ffffff' }}
         >
             <Grid container alignItems="center">
@@ -33,7 +34,7 @@ const Links = ({ href, light, ...rest }) => {
                     </Typography>
                 </Grid>
             </Grid>
-        </Link>
+        </LinkMUI>
     )
 }
 export default Links

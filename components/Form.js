@@ -41,8 +41,8 @@ const Form = () => {
     const classes = useStyles()
     return (
         <>
-            <Grid container xs={12} justify="center">
-                <Grid container xs={10} md={8} lg={6}>
+            <Grid container item xs={12} justify="center">
+                <Grid container item xs={10} md={8} lg={6}>
                     <form
                         action="https://kwes.io/api/foreign/forms/be4vVabxv6v4WwS6X8Vw"
                         className={`kwes-form ${classes.root}`}

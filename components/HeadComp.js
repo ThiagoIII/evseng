@@ -8,10 +8,6 @@ const HeadComp = () => (
             content="minimum-scale=1, initial-scale=1, width=device-width"
         />
         <meta charSet="utf-8" />
-        {/*     <meta
-            http-equiv="Content-Security-Policy"
-            content="default-src 'self' />*/}{' '}
-        {/* need to implement a nonce with a server, as this is JAMStack I still need to do research about this. */}
         <script src="https://kwes.io/v2/kwes-script.js" async />
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
         <link
@@ -41,7 +37,7 @@ const HeadComp = () => (
         <meta name="theme-color" content="#141414" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta property="og:url" content="https://evseng.vercel.app" />
         <meta property="og:type" content="website" />
         <meta

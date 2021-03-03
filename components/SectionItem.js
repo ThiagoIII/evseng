@@ -28,6 +28,7 @@ const SectionItem = ({ card, ...rest }) => {
                 </Link>
             </Breadcrumbs>
             <Grid
+                item
                 xs={10}
                 container
                 alignItems="center"
