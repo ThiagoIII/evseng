@@ -5,7 +5,8 @@ import Grid from '@material-ui/core/Grid'
 const Logo = () => (
     <Grid item container xs={12} md={3} justify="center" alignItems="center">
         <Image
-            src="/logoEVS.png"
+            srcSet="/logoEVS_webp.webp  213w"
+            src="/logoevs_small.png"
             animationDuration={500}
             style={{
                 height: 'auto',

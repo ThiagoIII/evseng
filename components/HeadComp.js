@@ -48,10 +48,7 @@ const HeadComp = () => (
             property="og:image"
             content="https://evseng.vercel.app/logoEVS.png"
         />
-        <meta
-            property="og:image:alt"
-            content="Logo da EVS Engenharia, dois telhados azuis se sobrepondo parcialmente"
-        />
+        <meta property="og:image:alt" content="Logo da EVS Engenharia" />
         <meta
             property="og:description"
             content="Empresa EVS Engenharia - Qualidade e confiança. Sede em Umuarama no Paraná"
@@ -68,7 +65,6 @@ const HeadComp = () => (
         <meta name="geo.region" content="BR-PR"></meta>
         <meta name="geo.placename" content="Umuarama"></meta>
         <title>EVS Engenharia - Qualidade e Confiança</title>
-        <link rel="icon" href="/logoEVS.png" />
     </Head>
 )
 

@@ -9,16 +9,14 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 export default function Home({ content }) {
     return (
         <>
-            <Layout>
-                <Breadcrumbs aria-label="breadcrumb">
-                    <Link color="inherit" href="/">
-                        Home
-                    </Link>
-                </Breadcrumbs>
-                <Grid container component="section">
-                    <Section allCards={content} />
-                </Grid>
-            </Layout>
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link color="inherit" href="/">
+                    Home
+                </Link>
+            </Breadcrumbs>
+            <Grid container component="section">
+                <Section allCards={content} />
+            </Grid>
         </>
     )
 }

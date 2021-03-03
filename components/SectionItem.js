@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 const SectionItem = ({ card, ...rest }) => {
     const classes = useStyles()
     return (
-        <Layout>
+        <>
             <Breadcrumbs aria-label="breadcrumb">
                 <Link color="inherit" href="/">
                     Home
@@ -56,7 +56,7 @@ const SectionItem = ({ card, ...rest }) => {
                     </pre>
                 </Grid>
             </Grid>
-        </Layout>
+        </>
     )
 }
 

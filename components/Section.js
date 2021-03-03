@@ -9,7 +9,8 @@ import Container from '@material-ui/core/Container'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { themeLight, themeDark } from '../util/darkLight'
 import { makeStyles } from '@material-ui/core/styles'
-
+import MessageError from '../components/MessageError'
+import promiseTestImage from '../util/promiseTestImage'
 const useStyles = makeStyles({
     imgStyleBase: {
         position: 'absolute',
@@ -23,12 +24,6 @@ const useStyles = makeStyles({
         backgroundRepeat: 'no-repeat',
         opacity: '0.1'
     },
-    imgStyleEl: {
-        backgroundImage: 'url("/wires.jpg")'
-    },
-    imgStyleHi: {
-        backgroundImage: 'url("/pipes.jpg")'
-    },
     whiteSpacePreWrap: {
         whiteSpace: 'pre-wrap'
     },
@@ -38,131 +33,147 @@ const useStyles = makeStyles({
     }
 })
 
-const Section = ({ allCards, light }) => {
-    const [data, setData] = React.useState([])
-    const classes = useStyles()
-    React.useEffect(() => {
-        async function getInfo() {
-            let info = await fetchCMSDataDev()
-
-            setData(info?.data?.cardCollection?.items)
+const Section = ({
+    allCards: {
+        data: {
+            cardCollection: { items = [] }
         }
-        getInfo()
+    },
+    light
+}) => {
+    const classes = useStyles()
+
+    React.useEffect(() => {
+        let elWires = document.getElementById('wires')
+        let elPipes = document.getElementById('pipes')
+
+        promiseTestImage('/wires_webpSmall30.webp', '/wires_jpgSmall20.jpg')
+            .then(url => {
+                elWires.style.backgroundImage = `url(${url})`
+            })
+            .catch(fallbackUrl => {
+                elWires.style.backgroundImage = `url(${fallbackUrl})`
+            })
+
+        promiseTestImage('/pipes_webpSmall50.webp', '/pipes_jpgSmall50')
+            .then(url => {
+                elPipes.style.backgroundImage = `url(${url})`
+            })
+            .catch(fallbackUrl => {
+                elPipes.style.backgroundImage = `url(${fallbackUrl})`
+            })
     }, [])
 
-    if (!data) {
-        return <h2>Fetching stuff</h2>
-    }
+    if (!items) return <MessageError />
+
     let matches = useMediaQuery('(min-width:960px)')
     return (
         <>
-            <MuiThemeProvider theme={light ? themeLight : themeDark}>
-                {data.map((section, index) => {
-                    let i = index % 2 === 0
-                    let matche = !matches && i
-                    return (
-                        <Box
-                            clone
-                            pt={5}
-                            order={section.order}
-                            key={section.id}
-                            px={3}
-                            style={
-                                light
-                                    ? matche
-                                        ? {
-                                              backgroundColor: '#2D5C80',
-                                              color: '#ffffff',
-                                              position: 'relative'
-                                          }
-                                        : {
-                                              backgroundColor: '#ffffff',
-                                              color: '#2D5C80',
-                                              position: 'relative'
-                                          }
-                                    : { position: 'relative' }
-                            }
-                            key={section.id}
-                        >
-                            <Grid item xs={12}>
-                                {section.title.includes('Elétrica') ? (
-                                    <Hidden mdUp>
-                                        <Container
-                                            className={`${classes.imgStyle} ${classes.imgStyleEl}`}
-                                        />
-                                    </Hidden>
-                                ) : section.title.includes('Hidráulica') ? (
-                                    <Hidden mdUp>
-                                        <Container
-                                            className={`${classes.imgStyle} ${classes.imgStyleHi}`}
-                                        />
-                                    </Hidden>
-                                ) : null}
+            {/*   <MuiThemeProvider theme={light ? themeLight : themeDark}> */}
+            {items.map((section, index) => {
+                let i = index % 2 === 0
+                let matche = !matches && i
+                return (
+                    <Box
+                        clone
+                        pt={5}
+                        order={section.order}
+                        key={section.id}
+                        px={3}
+                        style={
+                            light
+                                ? matche
+                                    ? {
+                                          backgroundColor: '#2D5C80',
+                                          color: '#ffffff',
+                                          position: 'relative'
+                                      }
+                                    : {
+                                          backgroundColor: '#ffffff',
+                                          color: '#2D5C80',
+                                          position: 'relative'
+                                      }
+                                : { position: 'relative' }
+                        }
+                        key={section.id}
+                    >
+                        <Grid item xs={12}>
+                            {section.title.includes('Elétrica') ? (
+                                <Hidden mdUp>
+                                    <Container
+                                        id="wires"
+                                        className={`${classes.imgStyleBase} `}
+                                    />
+                                </Hidden>
+                            ) : section.title.includes('Hidráulica') ? (
+                                <Hidden mdUp>
+                                    <Container
+                                        id="pipes"
+                                        className={`${classes.imgStyleBase} `}
+                                    />
+                                </Hidden>
+                            ) : null}
 
-                                <Typography
-                                    xs={12}
-                                    align="center"
-                                    variant="h5"
-                                    paragraph={true}
-                                    gutterBottom={true}
-                                >
-                                    {section.title}
-                                </Typography>
+                            <Typography
+                                xs={12}
+                                align="center"
+                                variant="h5"
+                                paragraph={true}
+                                gutterBottom={true}
+                            >
+                                {section.title}
+                            </Typography>
+                            <Grid
+                                item
+                                container
+                                spacing={1}
+                                justify="center"
+                                direction={
+                                    section.order % 2 === 0
+                                        ? 'row'
+                                        : 'row-reverse'
+                                }
+                                xs={12}
+                            >
                                 <Grid
+                                    xs={9}
+                                    md={5}
                                     item
                                     container
-                                    spacing={1}
+                                    alignItems="center"
                                     justify="center"
-                                    direction={
-                                        section.order % 2 === 0
-                                            ? 'row'
-                                            : 'row-reverse'
-                                    }
-                                    xs={12}
                                 >
+                                    <pre className={classes.whiteSpacePreWrap}>
+                                        {' '}
+                                        <Typography
+                                            align="left"
+                                            variant="body2"
+                                        >
+                                            {section.text}
+                                        </Typography>
+                                    </pre>
+                                </Grid>
+
+                                <Hidden smDown>
                                     <Grid
-                                        xs={12}
-                                        md={5}
                                         item
                                         container
-                                        alignItems="center"
                                         justify="center"
+                                        alignItems="center"
+                                        md={5}
                                     >
-                                        <pre
-                                            className={
-                                                classes.whiteSpacePreWrap
-                                            }
-                                        >
-                                            {' '}
-                                            <Typography
-                                                align="left"
-                                                variant="body2"
-                                            >
-                                                {section.text}
-                                            </Typography>
-                                        </pre>
+                                        <img
+                                            src={section.svgImage.url}
+                                            className={classes.imgLocal}
+                                        />
                                     </Grid>
-
-                                    <Hidden smDown>
-                                        <Grid
-                                            item
-                                            container
-                                            justify="center"
-                                            alignItems="center"
-                                            md={5}
-                                        >
-                                            <img
-                                                src={section.svgImage.url}
-                                                className={classes.imgLocal}
-                                            />
-                                        </Grid>
-                                    </Hidden>
-                                </Grid>
+                                </Hidden>
                             </Grid>
-                        </Box>
-                    )
-                })}
-            </MuiThemeProvider>
+                        </Grid>
+                    </Box>
+                )
+            })}
+            {/*  </MuiThemeProvider> */}
         </>
     )
 }
