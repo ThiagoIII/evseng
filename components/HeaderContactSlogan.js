@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 import Typography from '@material-ui/core/Typography'
 import ContactLinks from '../components/ContactLinks'
-import { makeStyles } from '@material-ui/core/styles'
 
 const HeaderContactSlogan = ({ light }) => {
     return (
