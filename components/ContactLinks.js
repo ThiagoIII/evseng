@@ -5,7 +5,13 @@ import linkSources from '../util/linksSource'
 import Typography from '@material-ui/core/Typography'
 
 const ContactLinks = ({ light }) => (
-    <Grid container alignItems="center" justify="center" spacing={2}>
+    <Grid
+        container
+        alignItems="center"
+        justify="center"
+        spacing={2}
+        direction="row"
+    >
         {linkSources.map(link => {
             return Array.isArray(link) === false ? (
                 <Grid item key="abc">
