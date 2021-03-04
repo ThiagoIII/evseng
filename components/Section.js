@@ -3,33 +3,10 @@ import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Hidden from '@material-ui/core/Hidden'
-import { fetchGraphQLDev as fetchCMSDataDev } from '../util/fetchGraphQL'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Container from '@material-ui/core/Container'
-import { MuiThemeProvider } from '@material-ui/core/styles'
-import { themeLight, themeDark } from '../util/darkLight'
-import { makeStyles } from '@material-ui/core/styles'
 import MessageError from '../components/MessageError'
 import promiseTestImage from '../util/promiseTestImage'
-
-const useStyles = makeStyles({
-    root: {
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        backgroundPosition: 'center',
-        backgroundOrigin: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        opacity: '0.1'
-    },
-    imgLocal: {
-        width: '80%',
-        height: 'auto'
-    }
-})
 
 const Section = ({
     allCards: {
@@ -39,8 +16,6 @@ const Section = ({
     },
     light
 }) => {
-    const classes = useStyles()
-
     React.useEffect(() => {
         let elWires = document.getElementById('wires')
         let elPipes = document.getElementById('pipes')
@@ -76,7 +51,6 @@ const Section = ({
     let matches = useMediaQuery('(min-width:960px)')
     return (
         <>
-            {/*   <MuiThemeProvider theme={light ? themeLight : themeDark}> */}
             {items.map((section, index) => {
                 let i = index % 2 === 0
                 let matche = !matches && i
@@ -153,7 +127,8 @@ const Section = ({
                                 paragraph={true}
                                 gutterBottom={true}
                             >
-                                {section.title}
+                                {section.title}{' '}
+                                {console.log('right after the title')}
                             </Typography>
                             <Grid
                                 item
@@ -196,7 +171,10 @@ const Section = ({
                                     >
                                         <img
                                             src={section.svgImage.url}
-                                            className={classes.imgLocal}
+                                            style={{
+                                                width: '80%',
+                                                height: 'auto'
+                                            }}
                                         />
                                     </Grid>
                                 </Hidden>
@@ -205,7 +183,6 @@ const Section = ({
                     </Box>
                 )
             })}
-            {/*  </MuiThemeProvider> */}
         </>
     )
 }
