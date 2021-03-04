@@ -44,13 +44,16 @@ const Section = ({
     React.useEffect(() => {
         let elWires = document.getElementById('wires')
         let elPipes = document.getElementById('pipes')
-
+        console.log('elWires, elPipes:', elWires, elPipes)
         promiseTestImage(
             '/wires_webpSmall30.webp',
             '/wires_jpgSmall20.jpg',
             elWires
         )
-            .then(data => (data.el.style.backgroundImage = `url(${data.url})`))
+            .then(data => {
+                console.log('inside .then of wires, data:', data)
+                data.el.style.backgroundImage = `url(${data.url})`
+            })
             .catch(
                 data =>
                     (data.el.style.backgroundImage = `url(${data.fallbackUrl}`)
@@ -58,7 +61,7 @@ const Section = ({
 
         promiseTestImage(
             '/pipes_webpSmall50.webp',
-            '/pipes_jpgSmall50',
+            '/pipes_jpgSmall50.jpg',
             elPipes
         )
             .then(data => (data.el.style.backgroundImage = `url(${data.url})`))
