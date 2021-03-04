@@ -122,6 +122,9 @@ const Section = ({
                                             opacity: '0.1'
                                         }}
                                     />
+                                    {console.log(
+                                        'right aftes the container for wires'
+                                    )}
                                 </Hidden>
                             ) : section.title.includes('Hidráulica') ? (
                                 <Hidden mdUp>
