@@ -2,11 +2,10 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Section from '../components/Section'
 import { fetchGraphQLProd as fetchCMSDataProd } from '../util/fetchGraphQL'
-import Layout from '../layout/Layout'
 import Link from '@material-ui/core/Link'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 
-export default function Home({ content, light }) {
+export default function Home({ content, supportForWebP, light }) {
     return (
         <>
             <Breadcrumbs aria-label="breadcrumb">
@@ -15,7 +14,11 @@ export default function Home({ content, light }) {
                 </Link>
             </Breadcrumbs>
             <Grid container component="section">
-                <Section allCards={content} light={light} />
+                <Section
+                    allCards={content}
+                    webp={supportForWebP}
+                    light={light}
+                />
             </Grid>
         </>
     )

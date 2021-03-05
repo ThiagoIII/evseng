@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Container from '@material-ui/core/Container'
 import MessageError from '../components/MessageError'
-import promiseTestImage from '../util/promiseTestImage'
+import checkSupportForWebP from '../util/promiseTestImage'
 
 const Section = ({
     allCards: {
@@ -16,36 +16,6 @@ const Section = ({
     },
     light
 }) => {
-    React.useEffect(() => {
-        let elWires = document.getElementById('wires')
-        let elPipes = document.getElementById('pipes')
-        console.log('elWires, elPipes:', elWires, elPipes)
-        promiseTestImage(
-            '/wires_webpSmall30.webp',
-            '/wires_jpgSmall20.jpg',
-            elWires
-        )
-            .then(data => {
-                console.log('inside .then of wires, data:', data)
-                data.el.style.backgroundImage = `url(${data.url})`
-            })
-            .catch(
-                data =>
-                    (data.el.style.backgroundImage = `url(${data.fallbackUrl}`)
-            )
-
-        promiseTestImage(
-            '/pipes_webpSmall50.webp',
-            '/pipes_jpgSmall50.jpg',
-            elPipes
-        )
-            .then(data => (data.el.style.backgroundImage = `url(${data.url})`))
-            .catch(
-                data =>
-                    (data.el.style.backgroundImage = `url(${data.fallbackUrl})`)
-            )
-    }, [])
-
     if (!items) return <MessageError />
 
     let matches = useMediaQuery('(min-width:960px)')
@@ -89,6 +59,8 @@ const Section = ({
                                             left: '0',
                                             width: '100%',
                                             height: '100%',
+                                            backgroundImage:
+                                                '/wires_jpgSmall20.jpg',
                                             backgroundPosition: 'center',
                                             backgroundOrigin: 'center',
                                             backgroundSize: 'cover',
@@ -96,9 +68,6 @@ const Section = ({
                                             opacity: '0.1'
                                         }}
                                     />
-                                    {console.log(
-                                        'right aftes the container for wires'
-                                    )}
                                 </Hidden>
                             ) : section.title.includes('Hidráulica') ? (
                                 <Hidden mdUp>
@@ -110,6 +79,8 @@ const Section = ({
                                             left: '0',
                                             width: '100%',
                                             height: '100%',
+                                            backgroundImage:
+                                                '/pipes_jpgSmall50.jpg',
                                             backgroundPosition: 'center',
                                             backgroundOrigin: 'center',
                                             backgroundSize: 'cover',
@@ -127,8 +98,7 @@ const Section = ({
                                 paragraph={true}
                                 gutterBottom={true}
                             >
-                                {section.title}{' '}
-                                {console.log('right after the title')}
+                                {section.title}
                             </Typography>
                             <Grid
                                 item
