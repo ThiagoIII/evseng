@@ -52,15 +52,13 @@ const Section = ({
                             {section.title.includes('Elétrica') ? (
                                 <Hidden mdUp>
                                     <Container
-                                        id="wires"
                                         style={{
                                             position: 'absolute',
                                             top: '0',
                                             left: '0',
                                             width: '100%',
                                             height: '100%',
-                                            backgroundImage:
-                                                '/wires_jpgSmall20.jpg',
+                                            backgroundImage: '/wire.jpg',
                                             backgroundPosition: 'center',
                                             backgroundOrigin: 'center',
                                             backgroundSize: 'cover',
@@ -72,15 +70,13 @@ const Section = ({
                             ) : section.title.includes('Hidráulica') ? (
                                 <Hidden mdUp>
                                     <Container
-                                        id="pipes"
                                         style={{
                                             position: 'absolute',
                                             top: '0',
                                             left: '0',
                                             width: '100%',
                                             height: '100%',
-                                            backgroundImage:
-                                                '/pipes_jpgSmall50.jpg',
+                                            backgroundImage: '/pipe.jpg',
                                             backgroundPosition: 'center',
                                             backgroundOrigin: 'center',
                                             backgroundSize: 'cover',
@@ -126,7 +122,7 @@ const Section = ({
                                             align="left"
                                             variant="body2"
                                         >
-                                            {section.text}
+                                            {section.landing}
                                         </Typography>
                                     </pre>
                                 </Grid>
